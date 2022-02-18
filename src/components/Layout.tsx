@@ -1,15 +1,17 @@
-import React from 'react'
-import Header from './Header'
-import Navigation from './Navigation'
-import Footer from './Footer'
+import { FC, ReactNode } from 'react'
+import { Grid } from '@mui/material'
+import TopBar from './TopBar'
 
-const Layout = () => {
+interface Props {
+	children: ReactNode
+}
+
+const Layout: FC<Props> = ({ children }) => {
 	return (
-		<>
-			<Header title="rps" />
-			<Navigation />
-			<Footer />
-		</>
+		<Grid container>
+			<TopBar />
+			<Grid sx={{}}>{children}</Grid>
+		</Grid>
 	)
 }
 
