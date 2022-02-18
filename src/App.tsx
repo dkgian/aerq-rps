@@ -1,14 +1,20 @@
-import React from 'react'
-import logo from './logo.svg'
 import './App.css'
-
-import Header from './components/Header'
+import { Routes, Route } from 'react-router-dom'
+import routes from './config/routes'
 
 function App() {
 	return (
-		<>
-			<Header title="rock-paper-scissors" />
-		</>
+		<Routes>
+			{routes.map(({ key, path, Component }) => {
+				return (
+					<Route
+						key={key}
+						path={path}
+						element={<Component />}
+					/>
+				)
+			})}
+		</Routes>
 	)
 }
 
