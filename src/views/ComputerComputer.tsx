@@ -1,10 +1,18 @@
-import { Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import Layout from '../components/Layout'
 
 const ComputerComputer = () => {
 	return (
 		<Layout>
-			<Grid>ComputerComputer</Grid>
+			<Grid
+				sx={{
+					background: 'cyan',
+					height: '80vh',
+				}}
+			>
+				<Button>Click</Button>
+				<></>
+			</Grid>
 		</Layout>
 	)
 }
