@@ -8,9 +8,9 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
 	return (
-		<Grid container>
+		<Grid>
 			<TopBar />
-			<Grid sx={{}}>{children}</Grid>
+			{children}
 		</Grid>
 	)
 }

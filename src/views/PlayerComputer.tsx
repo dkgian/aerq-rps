@@ -14,43 +14,21 @@ import {
 import { items } from '../config/items'
 
 export type Item = {
-	id: Number
 	label: string
-	win: String[]
+	win: string[]
 }
 
-const ItemButton = styled(Button)({
-	height: '5rem',
-	width: '5rem',
-	borderRadius: '50%',
-	alignSelf: 'flex-end',
-})
-
-const StyledChip = styled(Chip)({
-	width: '10rem',
-	height: '8rem',
-	fontSize: '2rem',
-	marginBottom: '3rem',
-})
-
-const StyledScoreBoard = styled(Typography)({
-	alignSelf: 'center',
-	marginTop: '1rem',
-	marginBottom: '1rem',
-})
-
 const PlayerComputer = () => {
-	const [userPoint, setUserPoint] = useState(0)
+	const [userPoint, setUserPoint] =
+		useState<number>(0)
 	const [computerPoint, setComputePoint] =
-		useState(0)
+		useState<number>(0)
 	const [comItem, setComItem] = useState<Item>({
-		id: 0,
-		label: '',
+		label: '?',
 		win: [],
 	})
 	const [userItem, setUserItem] = useState<Item>({
-		id: 0,
-		label: '',
+		label: '?',
 		win: [],
 	})
 
@@ -99,12 +77,12 @@ const PlayerComputer = () => {
 				>
 					<StyledChip
 						variant="outlined"
-						label={comItem.label || '?'}
+						label={comItem.label}
 					/>
 
 					<StyledChip
 						variant="outlined"
-						label={userItem.label || '?'}
+						label={userItem.label}
 					/>
 				</Grid>
 
@@ -131,5 +109,25 @@ const PlayerComputer = () => {
 		</Layout>
 	)
 }
+
+const ItemButton = styled(Button)({
+	height: '5rem',
+	width: '5rem',
+	borderRadius: '50%',
+	alignSelf: 'flex-end',
+})
+
+const StyledChip = styled(Chip)({
+	width: '10rem',
+	height: '8rem',
+	fontSize: '2rem',
+	marginBottom: '3rem',
+})
+
+const StyledScoreBoard = styled(Typography)({
+	alignSelf: 'center',
+	marginTop: '1rem',
+	marginBottom: '1rem',
+})
 
 export default PlayerComputer
