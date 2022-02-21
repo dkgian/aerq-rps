@@ -32,25 +32,27 @@ const PlayerComputer = () => {
 		win: [],
 	})
 
+	const updateScore = (winner: number) => {
+		if (winner === 0) {
+			return
+		}
+		if (winner === 1) {
+			setUserPoint(userPoint + 1)
+		}
+		if (winner === 2) {
+			setComputePoint(computerPoint + 1)
+		}
+	}
+
 	const chooseItem = (userItem: Item) => {
 		const computerItem = getRandomItem(items)
 		setUserItem(userItem)
 		setComItem(computerItem)
-
 		const winner = getWinner(
 			userItem,
 			computerItem
 		)
-
-		if (winner === 'tie') {
-			return
-		} else {
-			if (winner === userItem) {
-				setUserPoint(userPoint + 1)
-			} else {
-				setComputePoint(computerPoint + 1)
-			}
-		}
+		updateScore(winner)
 	}
 
 	return (

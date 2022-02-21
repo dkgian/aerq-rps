@@ -7,15 +7,13 @@ export function getRandomItem(items: Item[]) {
 }
 
 export const getWinner = (p1: Item, p2: Item) => {
-	let winner
-	if (p1.label === p2.label) {
-		winner = 'tie'
-	} else {
-		if (p1.win.includes(p2.label)) {
-			winner = p1
-		} else {
-			winner = p2
-		}
+	let winner = 0
+	if (p1.win.includes(p2.label)) {
+		winner = 1
 	}
+	if (p2.win.includes(p1.label)) {
+		winner = 2
+	}
+
 	return winner
 }
