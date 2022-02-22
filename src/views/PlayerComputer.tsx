@@ -59,7 +59,6 @@ const PlayerComputer = () => {
 					display: 'flex',
 					flexDirection: 'column',
 					width: '100vw',
-					height: '50vh',
 				}}
 			>
 				<ScoreBoard
