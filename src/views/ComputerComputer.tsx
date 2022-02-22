@@ -1,12 +1,8 @@
 import { useState } from 'react'
-import {
-	Grid,
-	Button,
-	Chip,
-	Typography,
-} from '@mui/material'
+import { Grid, Button, Chip } from '@mui/material'
 import { styled } from '@mui/system'
 import Layout from '../components/Layout'
+import ScoreBoard from '../components/ScoreBoard'
 import {
 	getRandomItem,
 	getWinner,
@@ -66,17 +62,19 @@ const ComputerComputer = () => {
 			<Grid
 				sx={{
 					display: 'flex',
-					flexGrow: 1,
 					flexDirection: 'column',
 				}}
 			>
-				<StyledScoreBoard variant="subtitle1">
-					Computer 1
-					<h1>
-						{c1Score} : {c2Score}
-					</h1>
-					Computer 2
-				</StyledScoreBoard>
+				<ScoreBoard
+					p1={{
+						label: 'Com 1',
+						score: c1Score,
+					}}
+					p2={{
+						label: 'Com 2',
+						score: c2Score,
+					}}
+				/>
 
 				<Grid
 					sx={{
@@ -128,12 +126,6 @@ const StyledChip = styled(Chip)({
 	height: '8rem',
 	fontSize: '2rem',
 	marginBottom: '3rem',
-})
-
-const StyledScoreBoard = styled(Typography)({
-	alignSelf: 'center',
-	marginTop: '1rem',
-	marginBottom: '1rem',
 })
 
 export default ComputerComputer

@@ -1,12 +1,8 @@
 import { useState } from 'react'
-import {
-	Grid,
-	Button,
-	Chip,
-	Typography,
-} from '@mui/material'
+import { Grid, Button, Chip } from '@mui/material'
 import { styled } from '@mui/system'
 import Layout from '../components/Layout'
+import ScoreBoard from '../components/ScoreBoard'
 import {
 	getRandomItem,
 	getWinner,
@@ -19,9 +15,9 @@ export type Item = {
 }
 
 const PlayerComputer = () => {
-	const [userPoint, setUserPoint] =
+	const [userScore, setUserScore] =
 		useState<number>(0)
-	const [computerPoint, setComputePoint] =
+	const [computerScore, setComputeScore] =
 		useState<number>(0)
 	const [comItem, setComItem] = useState<Item>({
 		label: '?',
@@ -37,10 +33,10 @@ const PlayerComputer = () => {
 			return
 		}
 		if (winner === 1) {
-			setUserPoint(userPoint + 1)
+			setUserScore(userScore + 1)
 		}
 		if (winner === 2) {
-			setComputePoint(computerPoint + 1)
+			setComputeScore(computerScore + 1)
 		}
 	}
 
@@ -66,10 +62,16 @@ const PlayerComputer = () => {
 					height: '50vh',
 				}}
 			>
-				<StyledScoreBoard variant="h5">
-					You {userPoint} : {computerPoint}{' '}
-					Computer
-				</StyledScoreBoard>
+				<ScoreBoard
+					p1={{
+						label: 'You',
+						score: userScore,
+					}}
+					p2={{
+						label: 'Com',
+						score: computerScore,
+					}}
+				/>
 
 				<Grid
 					sx={{
@@ -126,12 +128,6 @@ const StyledChip = styled(Chip)({
 	height: '8rem',
 	fontSize: '2rem',
 	marginBottom: '3rem',
-})
-
-const StyledScoreBoard = styled(Typography)({
-	alignSelf: 'center',
-	marginTop: '1rem',
-	marginBottom: '1rem',
 })
 
 export default PlayerComputer
