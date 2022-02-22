@@ -2,7 +2,7 @@ import {
 	render,
 	screen,
 } from '@testing-library/react'
-import ScoreBoard from '../ScoreBoard'
+import ScoreBoard from './ScoreBoard'
 
 test('renders score board', () => {
 	render(
