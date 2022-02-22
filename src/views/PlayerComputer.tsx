@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { Grid, Button, Chip } from '@mui/material'
+import { Grid, Button } from '@mui/material'
 import { styled } from '@mui/system'
 import Layout from '../components/Layout'
+import SelectedItems from '../components/SelectedItems'
 import ScoreBoard from '../components/ScoreBoard'
 import {
 	getRandomItem,
@@ -56,7 +57,6 @@ const PlayerComputer = () => {
 			<Grid
 				sx={{
 					display: 'flex',
-					flexGrow: 1,
 					flexDirection: 'column',
 					width: '100vw',
 					height: '50vh',
@@ -73,24 +73,10 @@ const PlayerComputer = () => {
 					}}
 				/>
 
-				<Grid
-					sx={{
-						display: 'grid',
-						justifyContent: 'center',
-						width: '100vw',
-						color: 'blue',
-					}}
-				>
-					<StyledChip
-						variant="outlined"
-						label={comItem.label}
-					/>
-
-					<StyledChip
-						variant="outlined"
-						label={userItem.label}
-					/>
-				</Grid>
+				<SelectedItems
+					item1={userItem.label}
+					item2={comItem.label}
+				/>
 
 				<Grid
 					sx={{
@@ -121,13 +107,6 @@ const ItemButton = styled(Button)({
 	width: '5rem',
 	borderRadius: '50%',
 	alignSelf: 'flex-end',
-})
-
-const StyledChip = styled(Chip)({
-	width: '10rem',
-	height: '8rem',
-	fontSize: '2rem',
-	marginBottom: '3rem',
 })
 
 export default PlayerComputer
