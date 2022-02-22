@@ -64,7 +64,6 @@ const PlayerComputer = () => {
 					flexDirection: 'column',
 					width: '100vw',
 					height: '50vh',
-					background: 'pink',
 				}}
 			>
 				<StyledScoreBoard variant="h5">
