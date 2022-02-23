@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Grid, Button } from '@mui/material'
+import { Grid } from '@mui/material'
 import { styled } from '@mui/system'
 import Layout from '../components/Layout'
 import SelectedItems from '../components/SelectedItems'
 import ScoreBoard from '../components/ScoreBoard'
+import ItemButton from '../components/ItemButton'
 import {
 	getRandomItem,
 	getWinner,
@@ -77,11 +78,9 @@ const PlayerComputer = () => {
 							return (
 								<ItemButton
 									key={item.label}
-									variant="outlined"
+									label={item.label}
 									onClick={() => chooseItem(item)}
-								>
-									{item.label}
-								</ItemButton>
+								/>
 							)
 						})}
 				</FlexRowWrap>
@@ -89,14 +88,6 @@ const PlayerComputer = () => {
 		</Layout>
 	)
 }
-
-const ItemButton = styled(Button)({
-	height: '6rem',
-	width: '6rem',
-	borderRadius: '50%',
-	alignSelf: 'flex-end',
-	margin: '1.5rem',
-})
 
 const FlexRowWrap = styled(Grid)({
 	display: 'flex',

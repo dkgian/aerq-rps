@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Grid, Button } from '@mui/material'
-import { styled } from '@mui/system'
+import { Grid } from '@mui/material'
 import Layout from '../components/Layout'
 import ScoreBoard from '../components/ScoreBoard'
 import SelectedItems from '../components/SelectedItems'
+import ItemButton from '../components/ItemButton'
 import {
 	getRandomItem,
 	getWinner,
@@ -90,22 +90,13 @@ const ComputerComputer = () => {
 				>
 					<ItemButton
 						key={'cc'}
-						variant="outlined"
+						label="Click"
 						onClick={() => clickComCom()}
-					>
-						Click
-					</ItemButton>
+					/>
 				</Grid>
 			</Grid>
 		</Layout>
 	)
 }
-
-const ItemButton = styled(Button)({
-	height: '5rem',
-	width: '5rem',
-	borderRadius: '50%',
-	alignSelf: 'flex-end',
-})
 
 export default ComputerComputer
