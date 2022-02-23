@@ -29,7 +29,8 @@ const StyledScoreBoard = styled(Grid)({
 	width: '100vw',
 	justifyContent: 'center',
 	marginTop: '1rem',
-	marginBottom: '1rem',
+	fontSize: '1.5rem',
+	fontFamily: 'Architects Daughter',
 })
 
 export default ScoreBoard
