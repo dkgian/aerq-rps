@@ -16,7 +16,7 @@ const TopBar = () => {
 			</StyledText>
 
 			<NavButtons>
-				<Button
+				<ModeButton
 					color="inherit"
 					onClick={() => {
 						navigate('/')
@@ -25,9 +25,9 @@ const TopBar = () => {
 					<StyledText>
 						Player vs Computer
 					</StyledText>
-				</Button>
+				</ModeButton>
 
-				<Button
+				<ModeButton
 					color="inherit"
 					onClick={() => {
 						navigate('/cc')
@@ -36,7 +36,7 @@ const TopBar = () => {
 					<StyledText>
 						Computer vs Computer
 					</StyledText>
-				</Button>
+				</ModeButton>
 			</NavButtons>
 		</StyledAppBar>
 	)
@@ -56,6 +56,15 @@ const StyledText = styled(Typography)({
 	alignSelf: 'center',
 	fontFamily: 'Architects Daughter',
 	marginTop: '0.5rem',
+})
+
+const ModeButton = styled(Button)({
+	border: '1px solid white',
+	borderRadius: '1rem',
+	'&:hover': {
+		background: 'lightgray',
+		color: 'black',
+	},
 })
 
 export default TopBar

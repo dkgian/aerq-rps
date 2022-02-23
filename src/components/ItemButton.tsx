@@ -33,6 +33,7 @@ const StyledButton = styled(Button)({
 	'&:hover': {
 		backgroundColor: 'white',
 		color: 'black',
+		border: '1px solid black',
 	},
 })
 
