@@ -26,3 +26,5 @@ yarn start
 // run tests
 yarn test
 ```
+
+Application is deployed in https://aerq-rps.netlify.app/
