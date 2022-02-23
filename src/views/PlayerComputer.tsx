@@ -54,13 +54,7 @@ const PlayerComputer = () => {
 
 	return (
 		<Layout>
-			<Grid
-				sx={{
-					display: 'flex',
-					flexDirection: 'column',
-					width: '100vw',
-				}}
-			>
+			<FlexColumn>
 				<ScoreBoard
 					p1={{
 						label: 'You',
@@ -77,12 +71,7 @@ const PlayerComputer = () => {
 					item2={comItem.label}
 				/>
 
-				<Grid
-					sx={{
-						display: 'flex',
-						justifyContent: 'space-evenly',
-					}}
-				>
+				<FlexRowWrap>
 					{items &&
 						items.map((item: Item) => {
 							return (
@@ -95,17 +84,30 @@ const PlayerComputer = () => {
 								</ItemButton>
 							)
 						})}
-				</Grid>
-			</Grid>
+				</FlexRowWrap>
+			</FlexColumn>
 		</Layout>
 	)
 }
 
 const ItemButton = styled(Button)({
-	height: '5rem',
-	width: '5rem',
+	height: '6rem',
+	width: '6rem',
 	borderRadius: '50%',
 	alignSelf: 'flex-end',
+	margin: '1.5rem',
+})
+
+const FlexRowWrap = styled(Grid)({
+	display: 'flex',
+	flexWrap: 'wrap',
+	justifyContent: 'center',
+})
+
+const FlexColumn = styled(Grid)({
+	display: 'flex',
+	flexDirection: 'column',
+	width: '100vw',
 })
 
 export default PlayerComputer

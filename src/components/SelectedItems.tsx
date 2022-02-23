@@ -11,12 +11,7 @@ const SelectedItems = ({
 	item2,
 }: ItemLabels) => {
 	return (
-		<Grid
-			sx={{
-				display: 'flex',
-				justifyContent: 'space-around',
-			}}
-		>
+		<FlexRowWrap>
 			<StyledChip
 				variant="outlined"
 				label={item1}
@@ -26,7 +21,7 @@ const SelectedItems = ({
 				variant="outlined"
 				label={item2}
 			/>
-		</Grid>
+		</FlexRowWrap>
 	)
 }
 
@@ -34,7 +29,13 @@ const StyledChip = styled(Chip)({
 	width: '10rem',
 	height: '8rem',
 	fontSize: '2rem',
-	marginBottom: '3rem',
+	margin: '1rem',
+})
+
+const FlexRowWrap = styled(Grid)({
+	display: 'flex',
+	flexWrap: 'wrap',
+	justifyContent: 'space-around',
 })
 
 export default SelectedItems
