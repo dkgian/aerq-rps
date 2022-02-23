@@ -10,10 +10,10 @@ import { useNavigate } from 'react-router-dom'
 const TopBar = () => {
 	const navigate = useNavigate()
 	return (
-		<AppBar position="static">
-			<Typography variant="h6">
+		<StyledAppBar position="static">
+			<StyledText variant="h4">
 				Rock, Paper, Scissors
-			</Typography>
+			</StyledText>
 
 			<NavButtons>
 				<Button
@@ -22,7 +22,9 @@ const TopBar = () => {
 						navigate('/')
 					}}
 				>
-					Player vs Computer
+					<StyledText>
+						Player vs Computer
+					</StyledText>
 				</Button>
 
 				<Button
@@ -31,16 +33,29 @@ const TopBar = () => {
 						navigate('/cc')
 					}}
 				>
-					Computer vs Computer
+					<StyledText>
+						Computer vs Computer
+					</StyledText>
 				</Button>
 			</NavButtons>
-		</AppBar>
+		</StyledAppBar>
 	)
 }
+
+const StyledAppBar = styled(AppBar)({
+	backgroundColor: 'black',
+	marginBottom: '2rem',
+})
 
 const NavButtons = styled(Toolbar)({
 	display: 'flex',
 	justifyContent: 'space-around',
+})
+
+const StyledText = styled(Typography)({
+	alignSelf: 'center',
+	fontFamily: 'Architects Daughter',
+	marginTop: '0.5rem',
 })
 
 export default TopBar
