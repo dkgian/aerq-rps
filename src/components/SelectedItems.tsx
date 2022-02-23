@@ -27,9 +27,12 @@ const SelectedItems = ({
 
 const StyledChip = styled(Chip)({
 	width: '10rem',
-	height: '8rem',
+	height: '10rem',
 	fontSize: '2rem',
-	margin: '1rem',
+	marginBottom: '1.5rem',
+	fontFamily: 'Architects Daughter',
+	borderRadius: '2rem',
+	boxShadow: '5px 5px gray',
 })
 
 const FlexRowWrap = styled(Grid)({
