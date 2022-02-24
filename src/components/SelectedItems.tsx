@@ -4,23 +4,65 @@ import { styled } from '@mui/system'
 type ItemLabels = {
 	item1: string
 	item2: string
+	winner: number
 }
 
 const SelectedItems = ({
 	item1,
 	item2,
+	winner,
 }: ItemLabels) => {
+	const tieColor = 'lightyellow'
+	const winColor = 'lightgreen'
+	const loseColor = 'pink'
+
 	return (
 		<FlexRowWrap>
-			<StyledChip
-				variant="outlined"
-				label={item1}
-			/>
+			{winner === 0 && (
+				<>
+					<StyledChip
+						variant="outlined"
+						label={item1}
+						style={{ background: tieColor }}
+					/>
 
-			<StyledChip
-				variant="outlined"
-				label={item2}
-			/>
+					<StyledChip
+						variant="outlined"
+						label={item2}
+						style={{ background: tieColor }}
+					/>
+				</>
+			)}
+			{winner === 1 && (
+				<>
+					<StyledChip
+						variant="outlined"
+						label={item1}
+						style={{ background: winColor }}
+					/>
+
+					<StyledChip
+						variant="outlined"
+						label={item2}
+						style={{ background: loseColor }}
+					/>
+				</>
+			)}
+			{winner === 2 && (
+				<>
+					<StyledChip
+						variant="outlined"
+						label={item1}
+						style={{ background: loseColor }}
+					/>
+
+					<StyledChip
+						variant="outlined"
+						label={item2}
+						style={{ background: winColor }}
+					/>
+				</>
+			)}
 		</FlexRowWrap>
 	)
 }

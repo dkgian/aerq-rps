@@ -29,6 +29,8 @@ const PlayerComputer = () => {
 		label: '?',
 		win: [],
 	})
+	const [lastWinner, setLastWinner] =
+		useState<number>(0)
 
 	const updateScore = (winner: number) => {
 		if (winner === 0) {
@@ -50,6 +52,7 @@ const PlayerComputer = () => {
 			userItem,
 			computerItem
 		)
+		setLastWinner(winner)
 		updateScore(winner)
 	}
 
@@ -70,6 +73,7 @@ const PlayerComputer = () => {
 				<SelectedItems
 					item1={userItem.label}
 					item2={comItem.label}
+					winner={lastWinner}
 				/>
 
 				<FlexRowWrap>

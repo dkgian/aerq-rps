@@ -80,6 +80,7 @@ const ComputerComputer = () => {
 				<SelectedItems
 					item1={c1Item.label}
 					item2={c2Item.label}
+					winner={0}
 				/>
 
 				<Grid
