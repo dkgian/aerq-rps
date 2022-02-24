@@ -16,6 +16,7 @@ export type Item = {
 }
 
 const ComputerComputer = () => {
+	const [winner, setWinner] = useState<number>(0)
 	const [c1Score, setC1Score] =
 		useState<number>(0)
 	const [c2Score, setC2Score] =
@@ -53,7 +54,7 @@ const ComputerComputer = () => {
 		const p1 = getRandomItem(items)
 		const p2 = getRandomItem(items)
 		const winner = getWinner(p1, p2)
-
+		setWinner(winner)
 		updatePlayerItems(p1, p2)
 		updateScore(winner)
 	}
@@ -80,7 +81,7 @@ const ComputerComputer = () => {
 				<SelectedItems
 					item1={c1Item.label}
 					item2={c2Item.label}
-					winner={0}
+					winner={winner}
 				/>
 
 				<Grid
