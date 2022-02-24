@@ -18,51 +18,31 @@ const SelectedItems = ({
 
 	return (
 		<FlexRowWrap>
-			{winner === 0 && (
-				<>
-					<StyledChip
-						variant="outlined"
-						label={item1}
-						style={{ background: tieColor }}
-					/>
+			<StyledChip
+				variant="outlined"
+				label={item1}
+				style={{
+					background:
+						winner === 0
+							? tieColor
+							: winner === 1
+							? winColor
+							: loseColor,
+				}}
+			/>
 
-					<StyledChip
-						variant="outlined"
-						label={item2}
-						style={{ background: tieColor }}
-					/>
-				</>
-			)}
-			{winner === 1 && (
-				<>
-					<StyledChip
-						variant="outlined"
-						label={item1}
-						style={{ background: winColor }}
-					/>
-
-					<StyledChip
-						variant="outlined"
-						label={item2}
-						style={{ background: loseColor }}
-					/>
-				</>
-			)}
-			{winner === 2 && (
-				<>
-					<StyledChip
-						variant="outlined"
-						label={item1}
-						style={{ background: loseColor }}
-					/>
-
-					<StyledChip
-						variant="outlined"
-						label={item2}
-						style={{ background: winColor }}
-					/>
-				</>
-			)}
+			<StyledChip
+				variant="outlined"
+				label={item2}
+				style={{
+					background:
+						winner === 0
+							? tieColor
+							: winner === 2
+							? winColor
+							: loseColor,
+				}}
+			/>
 		</FlexRowWrap>
 	)
 }
